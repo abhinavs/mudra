@@ -9,3 +9,4 @@ log/*.log
 .redcar
 .redcar/*
 config/config.yml
+.rvmrc
