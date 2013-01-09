@@ -1,0 +1,11 @@
+# database configuration
+database:
+  test:
+    adapter: mysql2
+    database: mudra_test
+  development:
+    adapter: mysql2
+    database: mudra_development
+  production:
+    adapter: mysql2
+    database: mudra_production
