@@ -10,3 +10,5 @@ log/*.log
 .redcar/*
 config/config.yml
 .rvmrc
+vendor/*
+.bundle/*

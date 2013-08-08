@@ -12,3 +12,6 @@ group :test do
   gem 'rack-test'
 	gem 'awesome_print'
 end
+#gem 'unicorn'
+gem 'thin'
+gem 'sinatra-synchrony'

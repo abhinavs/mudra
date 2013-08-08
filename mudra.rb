@@ -5,6 +5,8 @@ require File.join(File.dirname(__FILE__), 'config', 'boot')
 module Mudra
   class Application < Sinatra::Base
 
+    register Sinatra::Synchrony
+
     use Rack::Throttle::Daily,    :max => 1000  # requests
     use Rack::Throttle::Hourly,   :max => 100   # requests
     #use Rack::Throttle::Interval, :min => 1   # seconds
@@ -12,7 +14,7 @@ module Mudra
     mime_type :json, "application/json"
     configure { set :public_folder, File.join(File.dirname(__FILE__), 'public') }
     before { content_type :json }
-    before { authenticate_app! }
+    #before { authenticate_app! }
 
     helpers do
 
