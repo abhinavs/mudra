@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby -rubygems
 $:.<< File.dirname(__FILE__)
 
 require File.join(File.dirname(__FILE__), 'config', 'boot')
@@ -12,7 +13,7 @@ module Mudra
     mime_type :json, "application/json"
     configure { set :public_folder, File.join(File.dirname(__FILE__), 'public') }
     before { content_type :json }
-    before { authenticate_app! }
+    before { if ['/', '/v1/apps'].include?(request.env['PATH_INFO']) then pass end; authenticate_app! }
 
     helpers do
 

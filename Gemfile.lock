@@ -1,46 +1,62 @@
 GIT
   remote: git://github.com/bensomers/improved-rack-throttle.git
-  revision: ec67c2f127aa74eb5ce2bdc727499c50d783d1a9
+  revision: 53afaa2e4e13b5f60dd4cca1f86a6960d765780f
   specs:
-    improved-rack-throttle (0.7.0)
+    improved-rack-throttle (0.9.0)
       rack (>= 1.0.0)
 
 GIT
   remote: git://github.com/ctran/annotate_models.git
-  revision: be4e26825b521f0b2d86b181e2dff89901aa9b1e
+  revision: c952306966c9bae4438e4d40351561af3d8005c0
   specs:
-    annotate (2.6.0.beta1)
-      activerecord (>= 2.3.0)
-      rake (>= 0.8.7)
+    annotate (2.7.0)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 12.0)
 
 GEM
   remote: http://rubygems.org/
   specs:
-    activemodel (3.2.8)
-      activesupport (= 3.2.8)
-      builder (~> 3.0.0)
-    activerecord (3.2.8)
-      activemodel (= 3.2.8)
-      activesupport (= 3.2.8)
-      arel (~> 3.0.2)
-      tzinfo (~> 0.3.29)
-    activesupport (3.2.8)
-      i18n (~> 0.6)
-      multi_json (~> 1.0)
-    arel (3.0.2)
-    awesome_print (1.1.0)
-    builder (3.0.3)
+    activemodel (4.2.7.1)
+      activesupport (= 4.2.7.1)
+      builder (~> 3.1)
+    activerecord (4.2.7.1)
+      activemodel (= 4.2.7.1)
+      activesupport (= 4.2.7.1)
+      arel (~> 6.0)
+    activesupport (4.2.7.1)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
+    arel (6.0.4)
+    awesome_print (1.7.0)
+    bond (0.5.1)
+    builder (3.2.3)
     diff-lcs (1.1.3)
-    i18n (0.6.1)
-    json (1.7.5)
-    multi_json (1.3.6)
-    mysql2 (0.3.11)
-    rack (1.4.1)
-    rack-protection (1.2.0)
+    i18n (0.8.0)
+    json (1.8.6)
+    minitest (5.10.1)
+    pg (0.19.0)
+    protected_attributes (1.1.3)
+      activemodel (>= 4.0.1, < 5.0)
+    rack (1.6.5)
+    rack-protection (1.5.3)
       rack
-    rack-test (0.6.2)
+    rack-test (0.6.3)
       rack (>= 1.0)
-    rake (10.0.2)
+    rack-throttle (0.5.0)
+      bundler (>= 1.0.0)
+      rack (>= 1.0.0)
+    rake (11.3.0)
+    ripl (0.7.1)
+      bond (~> 0.5.1)
+    ripl-multi_line (0.3.1)
+      ripl (>= 0.3.6)
+    ripl-rack (0.2.1)
+      rack (>= 1.0)
+      rack-test (~> 0.6.2)
+      ripl (>= 0.7.0)
     rspec (2.4.0)
       rspec-core (~> 2.4.0)
       rspec-expectations (~> 2.4.0)
@@ -49,15 +65,23 @@ GEM
     rspec-expectations (2.4.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.4.0)
-    sinatra (1.3.3)
-      rack (~> 1.3, >= 1.3.6)
-      rack-protection (~> 1.2)
-      tilt (~> 1.3, >= 1.3.3)
-    sinatra-activerecord (1.1.1)
-      activerecord (~> 3.0)
-      sinatra (~> 1.0)
-    tilt (1.3.3)
-    tzinfo (0.3.33)
+    sinatra (1.4.8)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    sinatra-activerecord (2.0.12)
+      activerecord (>= 3.2)
+      sinatra (>= 1.0)
+    sqlite3 (1.3.13)
+    thread_safe (0.3.5)
+    tilt (2.0.6)
+    tux (0.3.0)
+      ripl (>= 0.3.5)
+      ripl-multi_line (>= 0.2.4)
+      ripl-rack (>= 0.2.0)
+      sinatra (>= 1.2.1)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
@@ -69,8 +93,12 @@ DEPENDENCIES
   awesome_print
   improved-rack-throttle!
   json
-  mysql2
+  pg
+  protected_attributes
   rack-test
+  rack-throttle
   rspec (= 2.4.0)
   sinatra
   sinatra-activerecord
+  sqlite3
+  tux

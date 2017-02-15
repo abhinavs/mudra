@@ -10,3 +10,4 @@ log/*.log
 .redcar/*
 config/config.yml
 .rvmrc
+dev.db

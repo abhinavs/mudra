@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby -rubygems
 ENV['APP_ENV'] ||= 'development'
 
 def require_local_lib(path)
@@ -12,6 +13,7 @@ require 'bundler'
 require 'logger'
 require 'sinatra'
 require 'active_record'
+require 'protected_attributes'
 require 'json'
 require 'rack/throttle'
 require 'active_support/core_ext/object/blank'
