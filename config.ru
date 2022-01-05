@@ -1,4 +1,6 @@
-require 'rubygems'
-require File.join(File.dirname(__FILE__), 'mudra')
-set :environment, ENV['APP_ENV'].to_sym
-run Mudra::Application
+require './config/environment'
+run ApplicationController
+use AboutController
+use UsersController
+use TransactionsController
+use AppsController

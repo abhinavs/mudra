@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   belongs_to  :app
   has_many    :transactions
 
-  attr_protected :current_balance, :app_id, :status,
-    :created_at, :updated_at
+  # attr_protected :current_balance, :app_id, :status,
+  #   :created_at, :updated_at
 
   before_validation :set_default_values, :on => :create
 

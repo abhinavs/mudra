@@ -1,24 +1,31 @@
-source "http://rubygems.org"
+source 'http://rubygems.org'
+ruby "3.0.3"
+
 gem 'sinatra'
-gem 'json'
-gem 'activerecord'
-gem 'protected_attributes'
-gem 'sinatra-activerecord'
-gem 'improved-rack-throttle', :git => 'git://github.com/bensomers/improved-rack-throttle.git'
-gem 'rack-throttle'
-gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
-gem 'activesupport'
-group :test do
-    gem 'rspec', '=2.4.0'
-    gem 'rack-test'
-    gem 'awesome_print'
-end
+gem 'activerecord', '~> 6.0', '>= 6.0.3.2', :require => 'active_record'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'rake'
+gem 'require_all'
+gem 'pg'
+gem 'puma'
+gem 'shotgun'
+gem 'sinatra-jsonp'
+gem "sinatra-cross_origin"
+gem 'rack-contrib'
+gem 'fast_jsonapi'
+gem 'sinatra-contrib', require: false
+gem 'pry'
+gem 'tux'
 
 group :development do
-    gem 'sqlite3'
-    gem "tux"
+  gem 'capistrano', '~> 3.16', require: false
+  gem 'capistrano3-puma', '~> 5.0.2', require: false
+  gem 'capistrano-rvm', '~> 0.1.2', require: false
+  gem 'capistrano-bundler', '~> 2.0.1', require: false
 end
 
-group :production do
-    gem 'pg'
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'rack-test'
 end

@@ -14,7 +14,7 @@ class App < ActiveRecord::Base
   has_many  :users
   has_many  :transactions
 
-  attr_protected :api_key, :status, :created_at, :updated_at
+  #attr_protected :api_key, :status, :created_at, :updated_at
   before_validation :set_default_values, :on => :create
 
   def self.accessible_keys

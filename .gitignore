@@ -4,10 +4,12 @@ coverage
 rdoc
 pkg
 db/pc-full.zip
-db/fixtures/pin.psv
+db/fixtures/*.psv
 log/*.log
 .redcar
 .redcar/*
-config/config.yml
-.rvmrc
-dev.db
+notes.txt
+config/deploy*
+Capfile
+.prod-env
+.env

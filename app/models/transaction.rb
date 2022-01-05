@@ -12,8 +12,8 @@ class Transaction < ActiveRecord::Base
   belongs_to  :app
   belongs_to  :user
 
-  attr_protected  :app_id, :user_id, :transaction_type,
-                  :created_at, :updated_at
+  # attr_protected  :app_id, :user_id, :transaction_type,
+  #                 :created_at, :updated_at
 
   before_validation :set_default_values, :on => :create
   after_create :update_current_balance
